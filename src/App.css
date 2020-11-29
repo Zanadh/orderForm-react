@@ -1,5 +1,21 @@
+@import '~antd/dist/antd.css';
+
+body { 
+  background-color: rgb(214, 213, 213);
+}
+
 .App {
   text-align: center;
+}
+.label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.required {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: red;
+  display: inline;
 }
 
 .App-logo {
@@ -14,7 +30,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +43,55 @@
   color: #61dafb;
 }
 
+.container {
+  text-align: left;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px black;
+}
+
+.form-container { 
+  background-color: white;
+  padding:10px;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.totalPriceContainer {
+  margin-bottom: 0;
+  
+}
+/* .totalPriceContainer label{ 
+  color: blue; 
+  text-align: right !important; 
+} */
+.ant-form-vertical .totalPriceContainer .ant-form-item-label{ 
+  color: blue; 
+  text-align: end !important; 
+}
+ 
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  } 
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
