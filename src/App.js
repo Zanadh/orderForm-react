@@ -99,11 +99,9 @@ function App() {
     })
     setProductInput(newField)
   }
-  const deleteProductField = (index) => {
-    console.log(index);
+  const deleteProductField = (index) => { 
     let newField = [...productInput]
-    newField.splice(index, 1)
-    console.log(newField);
+    newField.splice(index, 1) 
     setProductInput(newField)
   }
 
@@ -124,7 +122,7 @@ function App() {
   }, []);
 
   const handleChange = (name, value) => {
-    console.log(value);
+    // console.log(value); 
     setDetailInput({ ...detailInput, [name]: "" + value })
   } 
   
@@ -133,7 +131,7 @@ function App() {
     let productName = productInput[index].product_name
     let product = productStatic.find(product => product.product_name === productName)
 
-    console.log(value, name, index);
+    // console.log(value, name, index);
     let newData = [...productInput]
     if (name === 'unit') {
       let { units } = product
@@ -156,17 +154,14 @@ function App() {
         quantity: '',
         price: 0,
         total_price: 0,
-      }
-      console.log("reset form");
+      }   
       setProductInput(newData)
     }
   }
 
   useEffect(() => { //validasi
     let detailStatus = false
-    let productStatus = true
-    console.log(detailInput);
-    console.log(productInput);
+    let productStatus = true 
     let {distribution_center,name,payment_type,expired_date} = detailInput
     if(distribution_center && distribution_center !== '' && name && name !== '' && payment_type && payment_type !== '' && expired_date && expired_date !== ''){
       detailStatus = true
@@ -175,7 +170,6 @@ function App() {
     for (let i = 0; i < productInput.length; i++) {
       Object.keys(productInput[i]).find(key=>{
         if(!productInput[i][key] || productInput[i][key] === ''){
-          console.log("FOUND FALSY");
           productStatus = false 
         } 
         return ''
@@ -198,7 +192,7 @@ function App() {
   }
   useEffect(() => {
     let totalPrice = 0
-    console.log("product length : ", productInput.length);
+    // console.log("product length : ", productInput.length);
     productInput.forEach(el=>{
       totalPrice += el.price*el.quantity
     })
@@ -421,7 +415,7 @@ function App() {
                                 >
                                 <Select placeholder="Select Unit Type" value={productInput[i].unit} onChange={(value) => handleChangeProduct(i, "unit", value)}>
                                   {productInput[i].name === '' ?
-                                  <Option disabled value="">No Data Available</Option> 
+                                  <Option disabled >No Data Available</Option> 
                                   :
                                     createSelectItem(i)
                                   }
