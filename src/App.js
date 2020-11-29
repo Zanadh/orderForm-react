@@ -314,70 +314,7 @@ function App() {
               </Row>
             </div>
             {!detailInput.distribution_center || detailInput.distribution_center === '' ? null :
-              <>
-                {/* <div style={{ padding: 10 }}>
-                  <Divider />
-                  <Row>
-                    <Col sm={24} lg={8} style={{ fontWeight: 'bold', borderWidth: 1, borderWidth: 1, borderColor: 'black' }}>
-                      Products
-                      </Col>
-                    <Col xl={14} >
-                      <div>
-                        <Row gutter={10}>
-                          <Col span={18} style={{ borderWidth: 1, borderColor: 'black' }}>
-                            <Form.Item label="Product"> 
-                              <Select placeholder="Select Product" onChange={(value) => handleChangeProduct(0, "product_name", value)}>
-                                {
-                                  productStatic.map(value => {
-                                    return <Option key={value.id} value={value.product_name}>{value.product_name}</Option>
-                                  })
-                                }
-                              </Select>
-                            </Form.Item>
-                          </Col>
-                          <Col span={6} style={{ borderWidth: 1, borderColor: 'black' }}>
-                            <Form.Item label="Unit">
-                              <Select placeholder="Select Unit Type" onChange={(value) => handleChangeProduct(0, "unit", value)}>
-                                {productInput[0].name === '' ?
-                                  <Option disabled>No Data Available</Option> :
-                                  createSelectItem(0)
-                                }
-                              </Select>
-                            </Form.Item>
-                          </Col>
-                        </Row>
-                        <Row gutter={[24, 8]}>
-                          <Col span={6} style={{ borderWidth: 1, borderColor: 'black' }}>
-                            <Form.Item style={{ marginBottom: 0 }} label="Quantity">
-                              <InputNumber value={productInput[0].quantity} min={0} placesholder="input quantity" value={productInput[0].quantity} onChange={(value) => handleChangeProduct(0, 'quantity', value)} />
-                            </Form.Item>
-                          </Col>
-                          <Col span={6} style={{ borderWidth: 1, borderColor: 'black' }}>
-                            <Form.Item style={{ marginBottom: 0 }} label="Price">
-                              <InputNumber placeholder="input quantity" name="price" value={productInput[0].price} />
-                            </Form.Item>
-                          </Col>
-                          <Col span={12} style={{ borderWidth: 1, borderColor: 'black' }}>
-                            <Form.Item style={{ marginBottom: 0 }} label="Total Price">
-                              <Input value={productInput[0].total_price} placeholder="input placeholder" disabled />
-                            </Form.Item>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col offset={12} span={12}>
-                            <Divider style={{ marginTop: 10, marginBottom: 10 }} />
-                            <p style={{ float: 'left', fontWeight: 'bold' }}>
-                              Total Nett Price :
-                              </p>
-                            <p style={{ float: 'right', fontWeight: 'bold' }}>
-                              {productInput[0].total_price}
-                            </p>
-                          </Col>
-                        </Row>
-                      </div>
-                    </Col>
-                  </Row>
-                </div> */}
+              <> 
                 {!productInput ? null :
                   productInput.map((input, i) => (
                     // i === 0 ? null :
